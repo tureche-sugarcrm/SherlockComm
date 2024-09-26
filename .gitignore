@@ -1,0 +1,18 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore environment files
+db/sherlock_comm.db
+.env
+
+
+# Ignore log files
+*.log
+
+# Ignore compiled or cache files
+*.cache
+*.out
+*.pyc
+
+# MAC OS file ignore
+.DS_Store
