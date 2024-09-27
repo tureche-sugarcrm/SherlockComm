@@ -15,14 +15,7 @@ const getRandomUserForProject = async (projectId) => {
         }
       );
     });
-}
-
-function markCommentAdded(taskId, projectId) {
-    db.run(
-      `INSERT OR REPLACE INTO task_comments (task_key, project_id, comment_added) VALUES (?, ?, 1)`,
-      [taskId, projectId]
-    );
-}
+};
 
 module.exports = {
     functions: {

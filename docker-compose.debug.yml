@@ -1,0 +1,19 @@
+version: '3'
+services:
+  nodeapp:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    platform: linux/amd64
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+      - ./db/sherlock_comm.db:/usr/src/app/db
+    environment:
+      - JIRA_API_TOKEN=${JIRA_API_TOKEN}
+      - JIRA_EMAIL=${JIRA_EMAIL}
+      - JIRA_DOMAIN=${JIRA_DOMAIN}
+      - /usr/src/app/node_modules
+    command: npm run sherlock
